@@ -7,44 +7,44 @@ const {v4 : uuidv4} = require("uuid");
 
 const saltRounds = 10;
 
-//delete all products
-const deletetShops = async (req,res) => {
-  const addProduct = await pool.query(`
-     DELETE FROM shops 
-  `)
-  .then((product) => {
-      res.send({
-        success: true,
-        message: "Product is added Successfully",
-      });
-    })
-    .catch((error) => {
-      res.send({
-        success: false,
-        message: "Something wrong",
-        error: error,
-      });
-    });
-}
-//delete all products
-const deletetProducts = async (req,res) => {
-  const addProduct = await pool.query(`
-     DELETE FROM products 
-  `)
-  .then((product) => {
-      res.send({
-        success: true,
-        message: "Product is added Successfully",
-      });
-    })
-    .catch((error) => {
-      res.send({
-        success: false,
-        message: "Something wrong",
-        error: error,
-      });
-    });
-}
+// //delete all products
+// const deletetShops = async (req,res) => {
+//   const addProduct = await pool.query(`
+//      DELETE FROM shops 
+//   `)
+//   .then((product) => {
+//       res.send({
+//         success: true,
+//         message: "Product is added Successfully",
+//       });
+//     })
+//     .catch((error) => {
+//       res.send({
+//         success: false,
+//         message: "Something wrong",
+//         error: error,
+//       });
+//     });
+// }
+// //delete all products
+// const deletetProducts = async (req,res) => {
+//   const addProduct = await pool.query(`
+//      DELETE FROM products 
+//   `)
+//   .then((product) => {
+//       res.send({
+//         success: true,
+//         message: "Product is added Successfully",
+//       });
+//     })
+//     .catch((error) => {
+//       res.send({
+//         success: false,
+//         message: "Something wrong",
+//         error: error,
+//       });
+//     });
+// }
 //get all orderes
 const getAllOrders = async (req,res) => {
     const products = await pool.query(`
@@ -161,4 +161,4 @@ const changeOrderStatus = async ( req,res) => {
       });
 
 }
-module.exports = {getAllOrders,addProduct,allShops,changeOrderStatus,addShop,deletetShops,deletetProducts}
+module.exports = {getAllOrders,addProduct,allShops,changeOrderStatus,addShop}

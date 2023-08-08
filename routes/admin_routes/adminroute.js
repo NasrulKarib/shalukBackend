@@ -13,8 +13,8 @@ adminrouter.get("/get-all-orders",isAdmin,getAllOrders);
 adminrouter.post("/add-product",isAdmin,addProduct);
 adminrouter.get("/all-shops",allShops);
 adminrouter.post("/add-shop",isAdmin, addShop);
-adminrouter.get("/delete-shops",deletetShops);
-adminrouter.get("/delete-products",deletetProducts);
+// adminrouter.get("/delete-shops",deletetShops);
+// adminrouter.get("/delete-products",deletetProducts);
 //place order
 adminrouter.put("/change-order-status",isAdmin,changeOrderStatus);
 
