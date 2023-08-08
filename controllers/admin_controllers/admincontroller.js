@@ -26,6 +26,25 @@ const deletetShops = async (req,res) => {
       });
     });
 }
+//delete all products
+const deletetProducts = async (req,res) => {
+  const addProduct = await pool.query(`
+     DELETE FROM products 
+  `)
+  .then((product) => {
+      res.send({
+        success: true,
+        message: "Product is added Successfully",
+      });
+    })
+    .catch((error) => {
+      res.send({
+        success: false,
+        message: "Something wrong",
+        error: error,
+      });
+    });
+}
 //get all orderes
 const getAllOrders = async (req,res) => {
     const products = await pool.query(`
@@ -142,4 +161,4 @@ const changeOrderStatus = async ( req,res) => {
       });
 
 }
-module.exports = {getAllOrders,addProduct,allShops,changeOrderStatus,addShop,deletetShops}
+module.exports = {getAllOrders,addProduct,allShops,changeOrderStatus,addShop,deletetShops,deletetProducts}
