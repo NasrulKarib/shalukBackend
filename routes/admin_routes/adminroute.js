@@ -9,7 +9,7 @@ const { isAdmin } = require("../../controllers/auth_controllers/authcontroller")
   
 adminrouter.use(passport.initialize());
 // get all orders
-adminrouter.get("/get-all-orders",isAdmin,getAllOrders);
+adminrouter.get("/get-all-orders",getAllOrders);
 adminrouter.post("/add-product",isAdmin,addProduct);
 adminrouter.get("/all-shops",allShops);
 adminrouter.post("/add-shop",isAdmin, addShop);
