@@ -2,7 +2,7 @@ const { Pool } = require("pg");
 
 require("dotenv").config();
 
-// const { Client, Pool } = require("pg");
+const { Client } = require("pg");
 // const pool = new Client({
 //     host : "localhost",
 //     user:"postgres",
