@@ -29,7 +29,7 @@ const deletetShops = async (req,res) => {
 //delete all products
 const deletetProducts = async (req,res) => {
   const addProduct = await pool.query(`
-     DELETE FROM products WHERE product_image IS NULL 
+     DELETE FROM products WHERE LENGTH(product_image)=0 
   `)
   .then((product) => {
       res.send({
